@@ -1,0 +1,79 @@
+{
+  "built": "2026-11-17",
+  "raw_shapes": {
+    "calls": [
+      137735,
+      4
+    ],
+    "internet": [
+      104825,
+      4
+    ],
+    "messages": [
+      76051,
+      3
+    ],
+    "plans": [
+      2,
+      8
+    ],
+    "users": [
+      500,
+      8
+    ]
+  },
+  "users": 500,
+  "users_by_plan": {
+    "surf": 339,
+    "ultimate": 161
+  },
+  "user_months": 2293,
+  "user_months_by_plan": {
+    "surf": 1573,
+    "ultimate": 720
+  },
+  "missing_share_before_fill": {
+    "calls": 0.0153,
+    "messages": 0.2124,
+    "mb_used": 0.007
+  },
+  "zero_length_calls": 26834,
+  "zero_length_calls_share": 0.1948233927469416,
+  "churned_users": 34,
+  "revenue": {
+    "surf": {
+      "mean": 60.706408137317226,
+      "median": 40.36,
+      "total": 95491.18,
+      "over_share": 0.7260012714558169,
+      "mean_notebook": 57.101612811904
+    },
+    "ultimate": {
+      "mean": 72.31388888888888,
+      "median": 70.0,
+      "total": 52066.0,
+      "over_share": 0.05694444444444444,
+      "mean_notebook": 72.12929009331597
+    }
+  },
+  "tests": {
+    "plans": {
+      "t": 7.952094891333888,
+      "p": 3.170390548113581e-15,
+      "t_notebook": 10.635232952459619,
+      "p_notebook": 1.1268925953386526e-25,
+      "p_customer": 5.7194351303624345e-08
+    },
+    "nynj": {
+      "t": -2.1309454999502133,
+      "p": 0.03352561588530015,
+      "t_notebook": -2.370383261733081,
+      "p_notebook": 0.018103513064212415,
+      "p_customer": 0.44104821081481743,
+      "mean_nynj": 59.921352785145885,
+      "mean_rest": 65.2227713987474,
+      "n_nynj": 377,
+      "n_rest": 1916
+    }
+  }
+}
