@@ -103,7 +103,7 @@ def render() -> None:
         "no reliable evidence that the region pays differently."
     )
     note(
-        "The original notebook counted every month and reached both conclusions with slightly different numbers "
+        "The first version of the analysis counted every month and reached both conclusions with slightly different numbers "
         f"(plans: p = {t['plans']['p_notebook']:.1g}; NY-NJ: p = {t['nynj']['p_notebook']:.3f}), because its bills "
         "rounded call minutes down and charged data per MB. With Megaline's real billing rules the plan result "
         "holds; the regional result does not survive counting each customer once."

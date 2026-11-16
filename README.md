@@ -14,7 +14,7 @@ which plan earns more.
   explorer and CSV download.
 - **Data & method**: preparation, two corrections to the original calculation, and the limits of the data.
 
-Original notebook: [AIOPS-Portfolio-Projects / Megaline Analysis](https://github.com/ahmadhassan-aiops/AIOPS-Portfolio-Projects/tree/main/1.%20Data-analysis-with-python-Projects/Megaline%20Analysis)
+Notebook (updated with the corrections described in the app): [AIOPS-Portfolio-Projects / Megaline Analysis](https://github.com/ahmadhassan-aiops/AIOPS-Portfolio-Projects/tree/main/1.%20Data-analysis-with-python-Projects/Megaline%20Analysis)
 
 ## How it is built
 

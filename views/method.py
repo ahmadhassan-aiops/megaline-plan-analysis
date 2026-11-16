@@ -17,7 +17,7 @@ def render() -> None:
         "Data & method",
         "How the analysis was done",
         "The data, the preparation steps, two corrections to the original calculation and the limits of the "
-        f'study. The full Python work is in the <a href="{NOTEBOOK_URL}" target="_blank">original notebook</a>.',
+        f'study. The full Python work is in the <a href="{NOTEBOOK_URL}" target="_blank">notebook</a> (updated with the corrections described here).',
     )
 
     section("The data")
@@ -60,14 +60,14 @@ def render() -> None:
         ("Data",
          "Each session rounded up to whole MB, and extra data charged per fraction of a GB",
          "Sessions kept as they are; the month's total rounded up to whole GB, and extra data charged per GB"),
-    ], columns=["Item", "Original notebook", "This app"]), hide_index=True, border="horizontal")
+    ], columns=["Item", "First version", "Now (app and notebook)"]), hide_index=True, border="horizontal")
     md(
         f"Effect: the average Surf bill rises from **${r['surf']['mean_notebook']:.2f}** to "
         f"**${r['surf']['mean']:.2f}**, and Ultimate from ${r['ultimate']['mean_notebook']:.2f} to "
         f"${r['ultimate']['mean']:.2f}. The conclusion that Ultimate earns more per customer is unchanged."
     )
     md(
-        "A third change is about **comparing plans fairly**: several charts in the notebook compared plan "
+        "A third change is about **comparing plans fairly**: several charts in the first version compared plan "
         "*totals*, which mostly reflects that Surf has twice as many customers. This app compares the average "
         "per customer per month. And the regional hypothesis test is also run with each customer counted once, "
         "which changes its conclusion (see Hypothesis tests)."

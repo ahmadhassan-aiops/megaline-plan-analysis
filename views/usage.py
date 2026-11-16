@@ -77,7 +77,7 @@ def render() -> None:
         "(missed or unanswered calls); they are kept and cost nothing."
     )
     note(
-        "The original notebook rounded call minutes <b>down</b> (it converted to whole numbers before rounding up), "
+        "The first version of the analysis rounded call minutes <b>down</b> (it converted to whole numbers before rounding up), "
         "so every call billed a little short. This app rounds each call <b>up</b>, as Megaline bills."
     )
 

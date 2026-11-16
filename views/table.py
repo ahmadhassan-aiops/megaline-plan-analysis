@@ -24,7 +24,7 @@ def render() -> None:
         "Data preparation",
         "The analysis table",
         "Every chart in this app comes from one table with <b>one row per customer per month</b>. It is built in "
-        "steps from the raw event logs, the same way as in the original notebook.",
+        "steps from the raw event logs, the same way as in the notebook.",
     )
 
     section("Step 1. Four per-month tables")
