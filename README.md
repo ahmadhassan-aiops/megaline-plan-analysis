@@ -1,5 +1,7 @@
 # Which Megaline plan brings in more money?
 
+**Live app:** [megaline-plan-analysis.streamlit.app](https://megaline-plan-analysis.streamlit.app/) · **Notebook and project folder:** [AIOPS-Portfolio-Projects](https://github.com/ahmadhassan-aiops/AIOPS-Portfolio-Projects/tree/main/1.%20Data-analysis-with-python-Projects/Megaline%20Analysis)
+
 An interactive presentation of a telecom revenue analysis by **Ahmad Hassan** (AI Engineer).
 Megaline sells two prepaid plans, Surf ($20 + extras) and Ultimate ($70). Using 500 customers' calls, texts
 and data for 2018, the analysis prices every customer's month, compares how the plans are used and tests
