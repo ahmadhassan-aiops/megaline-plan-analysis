@@ -146,8 +146,8 @@ def render() -> None:
         "upgrade offer."
     )
     method_card("<b>How this was done.</b> Calls, texts and data sessions were summed per customer and month into "
-                "analytical tables, merged, and priced with Megaline's billing rules. Two corrections to the original "
-                "notebook (rounding of call minutes and of data) are explained on the methods page.",
+                "analytical tables, merged, and priced with Megaline's billing rules (each call rounded up to the minute, "
+                "each month's data rounded up to the GB), explained on the methods page.",
                 METHOD, tools=["pandas", "SciPy", "Welch's t-test", "Billing model"])
 
     footer()

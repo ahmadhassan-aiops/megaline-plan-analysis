@@ -6,7 +6,7 @@ import streamlit as st
 from scipy import stats
 
 from lib import charts, data
-from lib.ui import esc, chart, footer, header, insight, md, note, section
+from lib.ui import esc, chart, footer, header, insight, md, section
 
 
 def money(v: float, signed: bool = False) -> str:
@@ -63,7 +63,7 @@ def render() -> None:
                             help="The chance of calling a difference real when it is just noise that you accept.")
     unit = b.segmented_control(
         "Count each", ["Customer-month", "Customer"], default="Customer-month", key="unit",
-        help="Customer-month: every monthly bill is one observation (the original approach). "
+        help="Customer-month: every monthly bill is one observation. "
              "Customer: each customer's average bill is one observation, so heavy users with 12 months "
              "don't count 12 times.",
     ) or "Customer-month"
@@ -102,11 +102,4 @@ def render() -> None:
         f"(p = {t['nynj']['p']:.3f}); per customer, p = {t['nynj']['p_customer']:.2f}. The honest conclusion is that this data gives "
         "no reliable evidence that the region pays differently."
     )
-    note(
-        "The first version of the analysis counted every month and reached both conclusions with slightly different numbers "
-        f"(plans: p = {t['plans']['p_notebook']:.1g}; NY-NJ: p = {t['nynj']['p_notebook']:.3f}), because its bills "
-        "rounded call minutes down and charged data per MB. With Megaline's real billing rules the plan result "
-        "holds; the regional result does not survive counting each customer once."
-    )
-
     footer()

@@ -3,7 +3,7 @@
 import streamlit as st
 
 from lib import charts, data
-from lib.ui import chart, footer, header, insight, note, section
+from lib.ui import chart, footer, header, insight, section
 
 
 def render() -> None:
@@ -76,9 +76,4 @@ def render() -> None:
         f"Most calls bill at 1 to 12 minutes, the same on both plans. <b>{zero:.0%}</b> of calls last 0 seconds "
         "(missed or unanswered calls); they are kept and cost nothing."
     )
-    note(
-        "The first version of the analysis rounded call minutes <b>down</b> (it converted to whole numbers before rounding up), "
-        "so every call billed a little short. This app rounds each call <b>up</b>, as Megaline bills."
-    )
-
     footer()

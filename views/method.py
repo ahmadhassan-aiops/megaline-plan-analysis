@@ -1,4 +1,4 @@
-"""Data & method: source tables, cleaning and enrichment, corrections, limits."""
+"""Data & method: source tables, cleaning and enrichment, billing rules, limits."""
 
 import pandas as pd
 import streamlit as st
@@ -16,8 +16,8 @@ def render() -> None:
     header(
         "Data & method",
         "How the analysis was done",
-        "The data, the preparation steps, two corrections to the original calculation and the limits of the "
-        f'study. The full Python work is in the <a href="{NOTEBOOK_URL}" target="_blank">notebook</a> (updated with the corrections described here).',
+        "The data, the preparation steps, the billing rules and the limits of the "
+        f'study. The full Python work is in the <a href="{NOTEBOOK_URL}" target="_blank">notebook</a>.',
     )
 
     section("The data")
@@ -52,25 +52,17 @@ def render() -> None:
         ("Customer names", "First and last name columns", "Dropped: not needed for the analysis"),
     ], columns=["Item", "What was found", "How it was handled"]), hide_index=True, border="horizontal")
 
-    section("Two corrections to the original calculation")
+    section("Billing rules")
     st.table(pd.DataFrame([
-        ("Call minutes",
-         "np.ceil(duration.astype(int)): converting to whole numbers first cuts the decimals, so 2.3 minutes became 2",
-         "Each call rounded up: 2.3 minutes bills as 3, as Megaline charges"),
-        ("Data",
-         "Each session rounded up to whole MB, and extra data charged per fraction of a GB",
-         "Sessions kept as they are; the month's total rounded up to whole GB, and extra data charged per GB"),
-    ], columns=["Item", "First version", "Now (app and notebook)"]), hide_index=True, border="horizontal")
+        ("Call minutes", "Each call rounded up to the next whole minute: 2.3 minutes bills as 3"),
+        ("Data", "Sessions summed per month; the month's total rounded up to whole GB, extra data charged per GB"),
+        ("Texts", "Counted per month against the allowance"),
+    ], columns=["Item", "How it is billed"]), hide_index=True, border="horizontal")
     md(
-        f"Effect: the average Surf bill rises from **${r['surf']['mean_notebook']:.2f}** to "
-        f"**${r['surf']['mean']:.2f}**, and Ultimate from ${r['ultimate']['mean_notebook']:.2f} to "
-        f"${r['ultimate']['mean']:.2f}. The conclusion that Ultimate earns more per customer is unchanged."
-    )
-    md(
-        "A third change is about **comparing plans fairly**: several charts in the first version compared plan "
-        "*totals*, which mostly reflects that Surf has twice as many customers. This app compares the average "
-        "per customer per month. And the regional hypothesis test is also run with each customer counted once, "
-        "which changes its conclusion (see Hypothesis tests)."
+        f"Average monthly bill: **${r['surf']['mean']:.2f}** on Surf and **${r['ultimate']['mean']:.2f}** on Ultimate.\n\n"
+        "**Comparing plans fairly.** Surf has twice as many customers as Ultimate, so plan totals mostly reflect "
+        "customer numbers. The charts compare the average per customer per month, and the regional hypothesis test "
+        "is also run with each customer counted once (see Hypothesis tests)."
     )
 
     section("Limits of this data")

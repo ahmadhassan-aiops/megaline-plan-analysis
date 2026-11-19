@@ -16,7 +16,7 @@ and applies Megaline's billing rules:
   * a month with no calls/texts/data for a user counts as 0 of that service.
 
 The notebook's original revenue (calls rounded down, data billed per MB) is kept as `revenue_notebook`
-so the app can show what the correction changes.
+for reference.
 """
 
 from __future__ import annotations
